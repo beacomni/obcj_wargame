@@ -1,16 +1,13 @@
 //
-//  ViewController.h
+//  Card.m
 //  wargame
 //
 //  Created by beacomni on 6/20/17.
 //  Copyright © 2017 beacomni. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Card.h"
 
-@interface ViewController : UIViewController
-
+@implementation Card
 
 @end
-

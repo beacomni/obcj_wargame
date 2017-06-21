@@ -16,6 +16,7 @@
 		7B167E931EF9A743005006B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B167E911EF9A743005006B5 /* LaunchScreen.storyboard */; };
 		7B167E9E1EF9A743005006B5 /* wargameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B167E9D1EF9A743005006B5 /* wargameTests.m */; };
 		7B167EA91EF9A743005006B5 /* wargameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B167EA81EF9A743005006B5 /* wargameUITests.m */; };
+		7B167EBB1EF9AEBC005006B5 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B167EBA1EF9AEBC005006B5 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		7B167EA41EF9A743005006B5 /* wargameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wargameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B167EA81EF9A743005006B5 /* wargameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wargameUITests.m; sourceTree = "<group>"; };
 		7B167EAA1EF9A743005006B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B167EB91EF9AEBC005006B5 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		7B167EBA1EF9AEBC005006B5 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +110,14 @@
 				7B167E841EF9A743005006B5 /* AppDelegate.m */,
 				7B167E861EF9A743005006B5 /* ViewController.h */,
 				7B167E871EF9A743005006B5 /* ViewController.m */,
+				7B167EB91EF9AEBC005006B5 /* Card.h */,
 				7B167E891EF9A743005006B5 /* Main.storyboard */,
 				7B167E8F1EF9A743005006B5 /* Assets.xcassets */,
 				7B167E911EF9A743005006B5 /* LaunchScreen.storyboard */,
 				7B167E941EF9A743005006B5 /* Info.plist */,
 				7B167E8C1EF9A743005006B5 /* wargame.xcdatamodeld */,
 				7B167E801EF9A743005006B5 /* Supporting Files */,
+				7B167EBA1EF9AEBC005006B5 /* Card.m */,
 			);
 			path = wargame;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B167EBB1EF9AEBC005006B5 /* Card.m in Sources */,
 				7B167E8E1EF9A743005006B5 /* wargame.xcdatamodeld in Sources */,
 				7B167E881EF9A743005006B5 /* ViewController.m in Sources */,
 				7B167E851EF9A743005006B5 /* AppDelegate.m in Sources */,
@@ -434,6 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pioneer.wargame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -445,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pioneer.wargame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
