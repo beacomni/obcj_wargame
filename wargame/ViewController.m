@@ -34,7 +34,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *Player2SuitLabel;
 
 @property (strong, nonatomic) NSMutableArray *rankToFaceNumber;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Player2DeckSwipeRecognizer;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Player1DeckSwipeRecognizer;
 
+- (void )DoTurn;
 @end
 
 @implementation ViewController
@@ -42,11 +45,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
-    //[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+
     [self setup];
+    
+    UISwipeGestureRecognizer *swipeRecognizer;
+    
+    /*_Player2DeckSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(DoTurn)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeRecognizer.cancelsTouchesInView = YES;*/
+    
+    /*_Player1DeckSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(DoTurn)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    swipeRecognizer.cancelsTouchesInView = YES;*/
+    
 }
 
+#pragma mark
+/////////////gestures
+
+////////////////
+#pragma mark
+//main imple
 - (NSMutableArray *) InitDeck{
     NSMutableArray *spades = [self createSuit:_spade];
     NSMutableArray *clubs= [self createSuit:_club];
@@ -90,6 +109,17 @@
 }
 
 - (IBAction)HandleTurnClick:(id)sender {
+    [self DoTurn];
+}
+
+- (IBAction)Player1DeckSwipeRecognizerHandle:(id)sender {
+    [self DoTurn];
+}
+- (IBAction)Player2DeckSwipeRecognizer:(id)sender {
+    [self DoTurn];
+}
+
+- (void) DoTurn{
     if(_Player1Cards.count == 0 || _Player2Cards.count == 0){
         [self GameEnd];
     }
@@ -97,7 +127,7 @@
     [_Player1Cards removeObjectAtIndex:0];
     [_Player1CardLabel setText:_rankToFaceNumber[player1Card.rank]];
     [_Player1SuitLabel setText:player1Card.suit];
-
+    
     Card *player2Card = (Card *)_Player2Cards[0];
     [_Player2Cards removeObjectAtIndex:0];
     [_Player2CardLabel setText:_rankToFaceNumber[player2Card.rank]];
@@ -166,5 +196,8 @@
     _rankToFaceNumber[12] = @"ace";
     
 }
+
+
+
 
 @end

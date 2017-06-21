@@ -21,13 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-0U-gcX">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-0U-gcX">
                                 <rect key="frame" x="50" y="80" width="127" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MBv-nc-zUD" appends="YES" id="NnU-Pr-ULv"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="VyE-0M-Pu5">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="VyE-0M-Pu5">
                                 <rect key="frame" x="483" y="80" width="127" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MOU-gV-aad" appends="YES" id="DuF-2B-0Vh"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbD-8Z-pQi">
                                 <rect key="frame" x="103" y="281" width="21" height="21"/>
@@ -100,14 +108,26 @@
                     <connections>
                         <outlet property="Player1CardCount" destination="QbD-8Z-pQi" id="1NC-48-coI"/>
                         <outlet property="Player1CardLabel" destination="goc-Za-SVG" id="tM7-Pv-zIc"/>
+                        <outlet property="Player1DeckSwipeRecognizer" destination="MBv-nc-zUD" id="2Qo-iC-sRI"/>
                         <outlet property="Player1ImageView" destination="Ub8-0U-gcX" id="L4W-AS-x45"/>
                         <outlet property="Player1SuitLabel" destination="za5-Cu-8rO" id="LHc-35-RKP"/>
                         <outlet property="Player2CardCount" destination="LeK-pk-vKj" id="cxL-WK-DP4"/>
                         <outlet property="Player2CardLabel" destination="TUB-3D-Nqi" id="7pw-zv-ISG"/>
+                        <outlet property="Player2DeckSwipeRecognizer" destination="MOU-gV-aad" id="Bea-xn-4MD"/>
                         <outlet property="Player2SuitLabel" destination="YwW-AV-P3B" id="u0u-mE-bV6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="MOU-gV-aad">
+                    <connections>
+                        <action selector="Player2DeckSwipeRecognizer:" destination="BYZ-38-t0r" id="hb9-44-S9A"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="MBv-nc-zUD">
+                    <connections>
+                        <action selector="Player1DeckSwipeRecognizerHandle:" destination="BYZ-38-t0r" id="zry-ev-hLw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="122.40000000000001"/>
         </scene>
